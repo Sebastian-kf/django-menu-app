@@ -1,0 +1,40 @@
+<h1>menu index page</h1>
+
+<div style="padding: 15 10;">
+{% if menu_item_list %}
+    <ul>
+        {% for item in menu_item_list %}
+        <li>
+            <div>
+                <div>
+                    <img src="{{item.image.url}}" style="height: 8rem; width: 8rem; position: center;">
+                <h4>{{ item.menu_item_name }}</h4>
+                </div>
+                <div>
+                    <h6>{{ item.item_description }}</h6>
+                </div>
+                <div>
+                    <p>{{ item.item_price }}</p>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+ <h4>No items available at this time</h4>
+{% endif %}
+</div>
+
+<!--
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+C:\Users\Basti\Documents\passion-projects\menu-django\menu_app\media\menu_images\french-toast-recipe-1.jpg
+-->
